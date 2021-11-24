@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link href="/css/registerstyle.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <div class="registration-container">
+        <h1>Registration</h1>
+        <div class="notes">
+            <span id="welcome-message">Welcome to Weather App!</span>
+            <span id="registration-note">*Please fill out the following information.</span>
+        </div>
+        <form action="">
+            <input id="firstname-input" type="text" name="firstname" placeholder="Firstname">
+            <input id="lastname-input" type="text" name="lastname" placeholder="Lastname">
+            <input type="text" id="email-input" name="email" placeholder="Email">
+            <input type="password" id="password-input" name="password" placeholder="Password">
+            <input type="password" id="confirm-password-input" name="confirm-password" placeholder="Confirm-Password">
+            <input id="register-input" type="submit" value="REGISTER">
+        </form>
+        <span>Have an account? Login in<a href="/auth"> here </a></span>
+    </div>
+</body>
+</html>
