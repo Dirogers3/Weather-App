@@ -144,3 +144,77 @@
     padding: 7px;
 
 }
+
+.preferences {
+    background-color: rgb(240, 240, 240);
+    width: 650px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.preferences-left form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#preferences-input {
+    color: black;
+    border: none;
+    height: 35px;
+    width: 100%;
+    font-size: 26px;
+    text-align: center;
+    border-bottom: 2px solid #7ecdea;
+    margin-top: 15px;
+    margin-left: 25px;
+    background-color: rgb(240, 240, 240);
+}
+
+#preferences-input:focus {
+    outline: none;
+}
+
+#preferences-input::placeholder{
+    color: rgb(187, 187, 187);
+}
+
+#preferences-form-button {
+    background-color: #7ecdea;
+    width: 120px;
+    height: 40px;
+    border-radius: 7px;
+    margin-top: 15px;
+    transform: translateX(10px);
+    font-size: 18px;
+}
+
+#preferences-form-button:hover {
+    background-color: #47aace;
+    
+}
+
+.preferences-left {
+    padding-right: 25px;
+}
+
+.preferences-right {
+    width: 250px;
+    padding: 25px;
+    margin-left: 25px;
+}
+
+.preferences-right label {
+    font-size: 18px;
+    color: black;
+}
+
+#darkmode-checkbox {
+    height: 25px;
+    width: 25px;
+    transform: translateY(7px);
+}

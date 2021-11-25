@@ -7,4 +7,6 @@ router.get('/', weatherController.getWeather);
 
 router.get('/favorites', weatherController.getFavorites);
 
+router.get('/preferences', weatherController.getPreferences);
+
 module.exports = router;

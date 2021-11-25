@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <title><%= pageTitle %></title>
+</head>
+<body>
+    <%- include('./modules/nav'); %>
+    <div class="preference-container">
+        <h1>Preferences</h1>
+        <div class="preferences">
+            <div class="preferences-left">
+                <form action="">
+                    <input id="preferences-input" type="text" name="firstname" value="firstname">
+                    <input id="preferences-input" type="text" name="lastname" value="lastname">
+                    <input id="preferences-input" type="text" name="email" value="email">
+                    <button id="preferences-form-button" type="submit">Edit</button>
+                </form>
+                <form action="">
+                    <input id="preferences-input" type="password" name="newPassword" placeholder="Enter New Password">
+                    <button id="preferences-form-button" type="submit">Edit</button>
+                </form>
+            </div>
+            <div class="preferences-right">
+                <label for="DarkMode">Dark Mode: <input id="darkmode-checkbox" type="checkbox" name="darkMode" id="darkMode"></label>
+            </div>        
+        </div>
+    </div>
+    
+</body>
+</html>
