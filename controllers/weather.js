@@ -4,3 +4,10 @@ exports.getWeather = function(req, res) {
         pageTitle: 'Weather | Weather App'
     });
 }
+
+exports.getFavorites = function(req, res) {
+    console.log("Get Favorites page")
+    res.render('favorites', {
+        pageTitle: 'Favorites | Weather App'
+    });
+}

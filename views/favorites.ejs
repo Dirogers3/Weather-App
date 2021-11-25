@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <%- include('./modules/nav'); %>
+    <div class="favorites-container">
+        <h2>Add Location</h2>
+        <form id="zipcode-form" action="">
+            <input type="text" name="zipcode" id="zipcode" placeholder="Enter Zip Code">
+            <button id="zipcode-button" type="submit">Add Location</button>
+        </form>
+        <h1>Favorites</h1>
+        <div class="favorites-list">
+            <div id="favorite-row">
+                <ul id="row-content">
+                    <li><a href="">San Diego</a></li>
+                    <li><a href="">Zip Code</a></li>
+                    <li><a href="">Details</a></li>
+                    <li><a href=""><img id="trash" src="/img/delete.png" alt="delete zip code from favorites"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
