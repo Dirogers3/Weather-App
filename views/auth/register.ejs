@@ -15,13 +15,18 @@
             <span id="welcome-message">Welcome to Weather App!</span>
             <span id="registration-note">*Please fill out the following information.</span>
         </div>
-        <form action="">
+        <% if (errorMessage) { %>
+            <div class="flashError"><%= errorMessage %></div>
+        <% } %>
+        <form action="/auth/postRegistration" method="post">
             <input id="firstname-input" type="text" name="firstname" placeholder="Firstname">
             <input id="lastname-input" type="text" name="lastname" placeholder="Lastname">
             <input type="text" id="email-input" name="email" placeholder="Email">
+            <input type="number" id="zipcode-input" name="home" placeholder="Zipcode">
             <input type="password" id="password-input" name="password" placeholder="Password">
             <input type="password" id="confirm-password-input" name="confirm-password" placeholder="Confirm-Password">
-            <input id="register-input" type="submit" value="REGISTER">
+            <br>
+            <button id="register-input" type="submit">Register</button>
         </form>
         <span>Have an account? Login in<a href="/auth"> here </a></span>
     </div>

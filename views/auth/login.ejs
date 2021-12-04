@@ -16,10 +16,11 @@
                 
                 <span class="forget-password">Forgot password?</span>
             </div>
-            <form action="/login">
+            <form action="/auth/postLogin" method="post">
                 <input id="email-input" type="text" name="email" placeholder="email">
                 <input id="password-input" type="password" name="password" placeholder="Password">
-                <input id="continue-input" type="submit" value="CONTINUE">
+                <br>
+                <button type="submit" id="continue-input">CONTINUE</button>
             </form>
         </div>
         <div class="login-right">

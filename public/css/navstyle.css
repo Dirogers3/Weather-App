@@ -97,3 +97,7 @@ nav {
     transform: translateX(7px) translateY(4px);
 }
 
+#logout-button {
+    border:none;
+    background-color: transparent;
+}
