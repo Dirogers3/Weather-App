@@ -12,20 +12,23 @@
     <%- include('./modules/nav'); %>
     <div class="favorites-container">
         <h2>Add Location</h2>
-        <form id="zipcode-form" action="">
+        <form id="zipcode-form" action="/weather/addZipCode" method="post">
             <input type="text" name="zipcode" id="zipcode" placeholder="Enter Zip Code">
             <button id="zipcode-button" type="submit">Add Location</button>
         </form>
         <h1>Favorites</h1>
         <div class="favorites-list">
-            <div id="favorite-row">
+            <% favorites.forEach(favorite => { %>
+                <div id="favorite-row">
                 <ul id="row-content">
-                    <li><a href="">San Diego</a></li>
-                    <li><a href="">Zip Code</a></li>
-                    <li><a href="">Details</a></li>
+                    <li><a id="cityname" href="/getDetails/<%= favorite.zipcode %>"><%= favorite.cityName %></a></li>
+                    <li><a href="/getDetails/<%= favorite.zipcode %>"><%= favorite.zipcode %></a></li>
+                    <li><a href="/getDetails/<%= favorite.zipcode %>">Details</a></li>
                     <li><a href=""><img id="trash" src="/img/delete.png" alt="delete zip code from favorites"></a></li>
                 </ul>
             </div>
+            <% }) %>
+            
         </div>
     </div>
 </body>

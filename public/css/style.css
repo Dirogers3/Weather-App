@@ -139,6 +139,10 @@
     background-color: rgb(204, 204, 204);
 }
 
+#cityname {
+
+}
+
 #row-content {
     display: flex;
     flex-direction: row;

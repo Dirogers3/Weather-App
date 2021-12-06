@@ -9,4 +9,6 @@ router.get('/favorites', weatherController.getFavorites);
 
 router.get('/preferences', weatherController.getPreferences);
 
+router.post('/addZipCode', weatherController.addZipCode);
+
 module.exports = router;

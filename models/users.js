@@ -22,7 +22,7 @@ const usersSchema = new Schema({
         required: true
     },
     favorites: {
-        type: [{zipcode: String}],
+        type: [{zipcode: String, cityName: String}],
     }
 
     });
@@ -37,6 +37,11 @@ const usersSchema = new Schema({
 
         return this.save();
     };
+
+    usersSchema.methods.addFavorite = function(zipcode, cityName) {
+        this.favorites.push({'zipcode': zipcode, 'cityName': cityName});
+        return this.save();
+    }
 
 
 module.exports = mongoose.model('User', usersSchema);
