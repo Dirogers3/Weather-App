@@ -14,5 +14,8 @@ router.post('/postLogin', authController.postLogin);
 
 router.post('/logout', authController.postLogout);
 
+router.post('/userEdit', authController.editUser);
+
+router.post('/editPass', authController.editPass);
 
 module.exports = router;

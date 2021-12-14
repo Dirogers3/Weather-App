@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,28 +8,53 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <title><%= pageTitle %></title>
 </head>
+<script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark");
+    }
+
+    let checkbox = document.getElementById("darkmode");
+    let body = document.getElementById('body');
+
+    checkbox.addEventListener('change', function () {
+        localStorage.setItem('dark', this.checked);
+        if (this.checked) {
+            body.classList.add('dark')
+        } else {
+            body.classList.remove('dark')
+        }
+    });
+</script>
+
 <body>
     <%- include('./modules/nav'); %>
     <div class="preference-container">
         <h1>Preferences</h1>
         <div class="preferences">
             <div class="preferences-left">
-                <form action="">
-                    <input id="preferences-input" type="text" name="firstname" value="firstname">
-                    <input id="preferences-input" type="text" name="lastname" value="lastname">
-                    <input id="preferences-input" type="text" name="email" value="email">
+
+                <form action="/auth/userEdit" method="POST">
+                    <input id="preferences-input" type="text" name="firstname" value="<%= user.firstname %>">
+                    <input id="preferences-input" type="text" name="lastname" value="<%= user.lastname %>">
+                    <input id="preferences-input" type="text" name="email" value="<%= user.email %>">
+                    <input id="preferences-input" type="hidden" name="id" value="<%= user._id %>">
                     <button id="preferences-form-button" type="submit">Edit</button>
                 </form>
-                <form action="">
+                <form action="/auth/editPass" method="POST">
                     <input id="preferences-input" type="password" name="newPassword" placeholder="Enter New Password">
+                    <input id="preferences-input" type="hidden" name="id" value="<%= user._id %>">
+
                     <button id="preferences-form-button" type="submit">Edit</button>
                 </form>
             </div>
             <div class="preferences-right">
-                <label for="DarkMode">Dark Mode: <input id="darkmode-checkbox" type="checkbox" name="darkMode" id="darkMode"></label>
-            </div>        
+                
+            </div>
         </div>
     </div>
-    
+
 </body>
+
 </html>
+<%- message = ""; %>

@@ -21,9 +21,9 @@
             <% favorites.forEach(favorite => { %>
                 <div id="favorite-row">
                 <ul id="row-content">
-                    <li><a id="cityname" href="/getDetails/<%= favorite.zipcode %>"><%= favorite.cityName %></a></li>
-                    <li><a href="/getDetails/<%= favorite.zipcode %>"><%= favorite.zipcode %></a></li>
-                    <li><a href="/getDetails/<%= favorite.zipcode %>">Details</a></li>
+                    <li><a id="cityname" href="/weather/getDetails/<%= favorite.zipcode %>"><%= favorite.cityName %></a></li>
+                    <li><a href="/weather/getDetails/<%= favorite.zipcode %>"><%= favorite.zipcode %></a></li>
+                    <li><a href="/weather/getDetails/<%= favorite.zipcode %>">Details</a></li>
                     <li><a href=""><img id="trash" src="/img/delete.png" alt="delete zip code from favorites"></a></li>
                 </ul>
             </div>

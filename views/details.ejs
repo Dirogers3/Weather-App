@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+    <%- include('./modules/nav'); %>
+    <h1 id="welcome-message"><%= body.location.name %></h1>
+    <div class="home-container">
+        <div class="left-home-container">
+            <div class="dashboard">
+                <div class="dashboard-left">
+                    <h3><%= body.location.name %></h3>
+                    <h4>Updated at: <%= body.current.last_updated %></h4>
+                    <h1 id="current-temp"><%= body.current.temp_f %>°F</h1>
+                </div>
+                <div class="dashboard-right">
+                    <h1><%= body.forecast.forecastday[0].day.maxtemp_f %>°F</h1>
+                    <h1 id="dashboard-right-low-temp"><%= body.forecast.forecastday[0].day.mintemp_f %>°F</h1>
+                    <img id="weatherIcon" src="<%= body.current.condition.icon %>" alt="weather icon">
+                </div>
+
+            </div>
+            <div class="hourly-forcast">
+                <h2 id="hourly-forcast-title">Hourly Forcast</h2>
+                <div class="hourly-details">
+                    <ul id="each-hour">
+                        <li>09:00am</li>
+                        <li><%= body.forecast.forecastday[0].hour[9].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[9].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[9].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>10:00am</li>
+                        <li><%= body.forecast.forecastday[0].hour[10].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[10].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[10].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>11:00am</li>
+                        <li><%= body.forecast.forecastday[0].hour[11].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[11].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[11].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>12:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[12].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[12].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[12].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>01:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[13].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[13].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[13].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>02:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[14].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[14].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[14].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>03:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[15].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[15].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[15].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>04:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[16].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[16].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[16].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>05:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[17].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[17].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[17].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>06:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[18].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[18].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[18].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>07:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[19].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[19].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[19].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>08:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[20].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[20].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[20].uv %>/10</li>
+                    </ul>
+                    <ul id="each-hour">
+                        <li>09:00pm</li>
+                        <li><%= body.forecast.forecastday[0].hour[21].temp_f %>°F</li>
+                        <li><%= body.forecast.forecastday[0].hour[21].condition.text %></li>
+                        <li>UV <%= body.forecast.forecastday[0].hour[21].uv %>/10</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>  
+        <div class="right-home-container">
+            <div id="humidity-precipitation">
+                <h2>Precipitation</h2>
+                <h1 class="percentage"><%= body.forecast.forecastday[0].day.daily_chance_of_rain %>%</h1>
+                <h2>Humidity</h2>
+                <h1 class="percentage"><%= body.current.humidity %>%</h1>
+            </div>
+            <div id="wind-UV">
+                <h2>Wind</h2>
+                <h1 class="percentage"><%= body.current.wind_dir %>, <%= body.current.wind_mph %>mph</h1>
+                <h2>UV</h2>
+                <h1 class="percentage"><%= body.current.uv %>/10</h1>
+            </div>
+        </div>  
+    </div>
+    <div class="week-forecast">
+        <h1>3-day Forecast</h1>
+        <div class="day-container">
+            
+            <div class="day">
+                <h2>Today</h2>
+                <h4>High | Low</h4>
+                <h3><%= body.forecast.forecastday[0].day.maxtemp_f %>°F | <%= body.forecast.forecastday[0].day.mintemp_f %>°F</h3>
+                <img class="forecast-icons" src="<%= body.forecast.forecastday[0].day.condition.icon %>" alt="<%= body.forecast.forecastday[0].day.condition.text %>">
+                <h4><%= body.forecast.forecastday[0].day.condition.text %></h4>
+            </div>
+            <div class="day">
+                <h2>Tomorrow</h2>
+                <h4>High | Low</h4>
+                <h3><%= body.forecast.forecastday[1].day.maxtemp_f %>°F | <%= body.forecast.forecastday[1].day.mintemp_f %>°F</h3>
+                <img class="forecast-icons" src="<%= body.forecast.forecastday[1].day.condition.icon %>" alt="<%= body.forecast.forecastday[1].day.condition.text %>">
+                <h4><%= body.forecast.forecastday[1].day.condition.text %></h4>
+            </div>
+            <div class="day">
+                <h2><%= body.forecast.forecastday[2].date %></h2>
+                <h4>High | Low</h4>
+                <h3><%= body.forecast.forecastday[2].day.maxtemp_f %>°F | <%= body.forecast.forecastday[2].day.mintemp_f %>°F</h3>
+                <img class="forecast-icons" src="<%= body.forecast.forecastday[2].day.condition.icon %>" alt="<%= body.forecast.forecastday[2].day.condition.text %>">
+                <h4><%= body.forecast.forecastday[2].day.condition.text %></h4>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

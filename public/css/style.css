@@ -85,7 +85,7 @@
     padding: 25px;
 }
 
-#percentage {
+.percentage {
  font-size: 38px;   
 }
 
@@ -235,4 +235,54 @@
     height: 25px;
     width: 25px;
     transform: translateY(7px);
+}
+
+#wind-UV {
+    background-color: #2a2d2f;
+    color: white;
+    padding: 25px;
+    border-radius: 7px;
+}
+
+.week-forecast {
+    background-color: #2a2d2f;
+    border-radius: 7px;
+    width: 700px;
+    height: 470px;
+    margin-top: 15px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.day-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.day {
+    background-color: #47aace;
+    width: 200px;
+    height: 350px;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.forecast-icons {
+    width: 100px
+}
+
+#message {
+    color: red;
+    padding-left: 15px;
+}
+
+.dark {
+    background-color: black;
+    color: white;
 }

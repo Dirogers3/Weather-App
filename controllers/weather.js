@@ -2,6 +2,8 @@ const User = require('../models/users');
 const request = require('request');
 require('dotenv').config();
 
+
+
 const APIKey = process.env.API_KEY;
 
 
@@ -9,10 +11,13 @@ exports.getWeather = function (req, res) {
     if (!req.session.isLoggedIn) {
         return res.redirect('/auth/login');
     }
-    console.log("Get Weather page")
+    
+
 
     const user = req.session.user;
     const zipCode = user.home;
+
+
     const options = {
         method: 'GET',
         url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
@@ -28,13 +33,16 @@ exports.getWeather = function (req, res) {
     };
     request(options, function (error, response, body) {
         if (error) throw new Error(error);
-        res.render('home', {
-            pageTitle: 'Weather | Weather App',
-            editing: false,
-            user: req.session.user,
-            isAuthenticated: req.session.isLoggedIn,
-            body: JSON.parse(body)
-        });
+        User.findById(req.session.user._id)
+        .then(user => {
+            res.render('home', {
+                pageTitle: 'Weather | Weather App',
+                editing: false,
+                user: user,
+                isAuthenticated: req.session.isLoggedIn,
+                body: JSON.parse(body)
+            });
+        })
     });
 
 }
@@ -61,10 +69,17 @@ exports.getPreferences = function (req, res) {
     if (!req.session.isLoggedIn) {
         return res.redirect('/auth/login');
     }
+    
     console.log("Get Preferences page")
-    res.render('preferences', {
-        pageTitle: 'Preferences | Weather App'
-    });
+    const message = "";
+    User.findById(req.session.user._id)
+        .then(user => {
+            res.render('preferences', {
+            pageTitle: 'Preferences | Weather App',
+            user: user,
+            message: message
+            });
+        })
 }
 
 exports.addZipCode = function (req, res) {
@@ -108,8 +123,37 @@ exports.addZipCode = function (req, res) {
             })
             .catch(err => console.log(err));
     });
+}
 
+exports.getDetails = function (req, res) {
+    if (!req.session.isLoggedIn) {
+        return res.redirect('/auth/login');
+    }
+    const zipcode = req.params.zipcode;
+    const user = req.session.user;
+    const options = {
+        method: 'GET',
+        url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
+        qs: {
+            q: zipcode,
+            days: '3'
+        },
+        headers: {
+            'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com',
+            'x-rapidapi-key': APIKey,
+            useQueryString: true
+        }
+    };
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+        console.log(JSON.parse(body));
 
-
-
+        res.render('details', {
+            pageTitle: 'Details | Weather App',
+            editing: false,
+            user: req.session.user,
+            isAuthenticated: req.session.isLoggedIn,
+            body: JSON.parse(body)
+        });
+    });
 }

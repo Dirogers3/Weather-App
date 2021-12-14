@@ -29,6 +29,7 @@
     "express-session": "^1.17.2",
     "flash": "^1.1.0",
     "mongoose": "^6.0.13",
+    "node-geocoder": "^3.28.0",
     "request": "^2.88.2",
     "router": "^1.3.6"
   }
